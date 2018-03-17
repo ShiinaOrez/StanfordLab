@@ -1,14 +1,7 @@
-// This is the CPP file you will edit and turn in.
-// Also remove these comments here and add your own.
-// TODO: remove this comment header
-
-#include <cctype>
-#include <cmath>
-#include <fstream>
-#include "console.h"
 #include<cstdio>
 #include<algorithm>
 #include<iostream>
+#include<cstring>
 #include<string>
 #include "lexicon.h"
 #include "stack.h"
@@ -31,7 +24,7 @@ int main(){
 	Queue<Stack<string> > q;
 	ori.push(fir);
 	q.enqueue(ori);
-	do{
+	    do{
 	    Stack<string> word;
     	    word=q.dequeue();
     	    string pre_word=word.peek();
