@@ -4,6 +4,9 @@
  */
 
 #include <math.h>
+#include <string>
+#include <ctime>
+#include <random>
 #include "recursion.h"
 #include "map.h"
 #include "vector.h"
@@ -118,7 +121,23 @@ void personalCurriculum(Map<string, Vector<string>> & prereqMap,string goal) {
 }
 
 string generate(Map<string, Vector<string> > & grammar, string symbol) {
-    // your code here
-    cout << "[recursion generate called]" << endl;
-    return "";
+    srand(time(0));
+    string str;
+    Vector <string> array;
+    if(!grammar.containsKey(symbol)){
+        str=' '+symbol;
+        return str;
+    }
+    else{
+        string token;
+        array=grammar.get(symbol);
+        token=array[rand()%array.size()];
+        TokenScanner s(token);
+        while(s.hasMoreTokens()){
+            string t=s.nextToken();
+            str=str+' '+generate(grammar, t);
+        }
+    }
+//    cout << "[recursion generate called]" << endl;
+    return str;
 }
