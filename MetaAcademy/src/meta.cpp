@@ -123,7 +123,7 @@ void demoFractals(GWindow & w) {
     int leftY = FRACTALS_LEFT_Y;
     for(int i = 1; i <= 4; i++) {
         cout << "Here is serpinskii order " << i << endl;
-        serpinskii(w, leftX, leftY, FRACTALS_SIZE, i, i);
+        serpinskii(w, leftX, leftY, FRACTALS_SIZE, i);
         getLine("Press enter to contine: ");
         w.clear();
     }
@@ -316,7 +316,7 @@ void makePersonalCurriculum() {
     }
     cout << "The order you should learn concepts:" << endl;
     personalCurriculum(prereqMap, goal);
-    cout << endl;
+    cout << goal << endl;
     waitToReturnToMenu();
 }
 
